@@ -43,20 +43,22 @@ const userInput = inquirer
             message: "Provide instructions examples for use.",
             name: "instructionExample",
         },
+        //List of licenses
         {
             type: "list",
             message: " License name ",
             name: "licenseName",
+            choices: ['The MIT License', 'The GPL License', 'Apache License', 'GNU License', 'N/A']
 
         },
         {
-            type: "list",
+            type: "input",
             message: " License url ",
             name: "licenseUrl",
 
         },
         {
-            type: "list",
+            type: "input",
             message: "please enter git hub user names of the contributor if any (If there are mulitple contributor, seperate names with comma and no space! )",
             name: "contributorsGitUserName",
 
