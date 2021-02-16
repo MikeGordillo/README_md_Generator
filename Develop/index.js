@@ -2,53 +2,64 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const path = require("path")
+
+
 // array of questions for user
 const userInput = inquirer
     .prompt([
         {
             type: "input",
             message: " GitHub user name?",
-            name: "username"
+            name: "username",
+            validate: (value) => { if (value) { return true } else { return "please input something" } }
         },
         {
             type: "input",
-            message: " Project Tittle?",
-            name: "projectTitle"
+            message: " Project Title?",
+            name: "projectTitle",
+            validate: (value) => { if (value) { return true } else { return "please input something" } }
+
         },
         {
             type: "input",
-            message: " Detail description",
-            name: "projectDescription"
+            message: " Detailed description",
+            name: "projectDescription",
+
         },
         {
             type: "input",
             message: "What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.",
-            name: "installationProcess"
+            name: "installationProcess",
+
         },
         {
             type: "input",
             message: "Instructions for use.",
-            name: "instruction"
+            name: "instruction",
+
         },
         {
             type: "input",
             message: "Provide instructions examples for use.",
-            name: "instructionExample"
+            name: "instructionExample",
         },
         {
-            type: "input",
+            type: "list",
             message: " License name ",
-            name: "licenseName"
+            name: "licenseName",
+
         },
         {
-            type: "input",
+            type: "list",
             message: " License url ",
-            name: "licenseUrl"
+            name: "licenseUrl",
+
         },
         {
-            type: "input",
+            type: "list",
             message: "please enter git hub user names of the contributor if any (If there are mulitple contributor, seperate names with comma and no space! )",
-            name: "contributorsGitUserName"
+            name: "contributorsGitUserName",
+
         },
         {
             type: "input",
@@ -62,12 +73,19 @@ const userInput = inquirer
 ## Project Title
         ${answers.projectTitle}
 ## Project
+        ${answers.projectDescription}
+        ${answers.installationProcess}
+        ${answers.instruction}
+        ${answers.instructionExample}
+        ${answers.licenseName}
+        ${answers.licenseUrl}
+        ${answers.contributorsGitUserName}
 ## Tests
         ${answers.tests}
         `);
         console.log(answers.username);
     });
-// console.log(userResponse, "anything");
+// console.log(userInput, "anything");
 // function to write README file
 function writeToFile(fileName, data) {
     fs.writeFileSync(path.join(__dirname, '../', fileName), data)
