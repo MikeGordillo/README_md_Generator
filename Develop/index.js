@@ -59,7 +59,7 @@ const userInput = inquirer
         },
         {
             type: "input",
-            message: "please enter git hub user names of the contributor if any (If there are mulitple contributor, seperate names with comma and no space! )",
+            message: " names of the contributor/s if any (If there are mulitple contributor, seperate names with comma and no space! )",
             name: "contributorsGitUserName",
 
         },
@@ -69,22 +69,7 @@ const userInput = inquirer
             name: "tests"
         }
     ]).then(function (answers) {
-        writeToFile("ReadMe.md", `
-## User_Name
-        ${answers.username}
-## Project Title
-        ${answers.projectTitle}
-## Project
-        ${answers.projectDescription}
-        ${answers.installationProcess}
-        ${answers.instruction}
-        ${answers.instructionExample}
-        ${answers.licenseName}
-        ${answers.licenseUrl}
-        ${answers.contributorsGitUserName}
-## Tests
-        ${answers.tests}
-        `);
+        writeToFile("ReadMe.md");
         console.log(answers.username);
     });
 // console.log(userInput, "anything");
