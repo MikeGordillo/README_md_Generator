@@ -1,7 +1,8 @@
 // require paths 
 const inquirer = require("inquirer");
 const fs = require("fs");
-const path = require("path")
+const path = require("path");
+const generateMarkdown = require("./utils/generateMarkdown");
 
 
 // array of questions for user
@@ -69,7 +70,8 @@ const userInput = inquirer
             name: "tests"
         }
     ]).then(function (answers) {
-        writeToFile("ReadMe.md");
+        const markDownContent = generateMarkdown(answers)
+        writeToFile("ReadMe.md", markDownContent);
         console.log(answers.username);
     });
 // console.log(userInput, "anything");
