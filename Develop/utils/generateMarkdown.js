@@ -32,4 +32,5 @@ function generateMarkdown(data) {
       `
 };
 
+// export to be used with index.js
 module.exports = generateMarkdown;

@@ -1,3 +1,4 @@
+// declaring required consts
 const fs = require("fs");
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown.js")
@@ -64,7 +65,7 @@ function init() {
     console.log("Inside the init function")
     inquirer.prompt(questions).then((response) => {
         fs.writeFileSync("README.md", generateMarkdown(response), function (err) {
-
+            // console log
             if (err) {
                 console.log(err)
             }
