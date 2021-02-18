@@ -1,42 +1,34 @@
 // function to generate markdown for README
-function generateMarkdown(answers) {
-        return `# ${answers.title}
-    # Description 
-    ${answers.description}
-
-    # TABLE OF CONTENTS
-    * [Description](#description)
-    * [Installation](#installation)
-    * [Usage](#usage)
-    * [Contribution](#contribution)
-    * [Test](#test)
-    * [Credits](#credits)
-    * [License](#license)
-
-    # Installation
-    ${answers.installation}
-
-    # Usage 
-    ${answers.usage}  
-
-    # Credits
-    ${answers.credits} 
-
-    # License
-    [License](https:/opensource.org/licenses/${answers.license}
-
-    # Description
-    ${answers.description}
-
-    # Badges
-    ![License](https://img.shields.io/badge/License-${answers.license}-blue.svg "License Badge")
-
-    # Contribution
-    ${answers.contribution} 
-
-    # Test
-    ${answers.test}
-
+function generateMarkdown(data) {
+        return `# ${data.title}
+        ![License Badge](https://img.shields.io/static/v1?label=License&message=${data.license}&color=blue)
+        
+        Name: ${data.name}
+        GitHub user name: ${data.gitHub}
+          
+        ## Table of contents:  
+        * [description](#description)
+        * [Installation](#Installation)
+        * [Usage](#usage)
+        * [License](#license)
+        * [Testing](#testing)
+        * [Questions](#questions)
+        
+        ## Description:
+        ${data.description}
+        ## Installation:
+        ${data.installation}
+        ## Usage:
+        ${data.usage}
+        ## license:
+        ${data.license}
+        
+        ## Contributing:
+        ${data.contribute}
+        ## Testing:
+        ${data.tests}
+        ## Questions:
+        Contact ${data.name} with any questions at ${data.contact}
       `
 };
 
