@@ -1,34 +1,43 @@
 // function to generate markdown for README
 function generateMarkdown(answers) {
-        return `
-  
-  ## User Name
-          ${answers.username}         
+        return `# ${answers.title}
+    # Description 
+    ${answers.description}
 
-  ## Project Title
-          ${answers.projectTitle}
+    # TABLE OF CONTENTS
+    * [Description](#description)
+    * [Installation](#installation)
+    * [Usage](#usage)
+    * [Contribution](#contribution)
+    * [Test](#test)
+    * [Credits](#credits)
+    * [License](#license)
 
-  ## Project
-          ${answers.projectDescription}
-          ${answers.installationProcess}
-          ${answers.instruction}
-          ${answers.instructionExample}
-          
- ## License
-          https://img.shields.io/badge/License-${answers.licenseName}-blue
-          ${answers.licenseName}
-          License Info: https://opensource.org/licenses/${answers.licenseName}
-          
- ## Contact
-          ${answers.email}
-          https://github.com/${answers.contributorsGitUserName}
-          https://img.shields.io/github-${answers.contributorsGitUserName}-orange 
-          ${answers.contributorsGitUserName}         
-  ## Tests
-          ${answers.tests} 
-     
-          
-`
+    # Installation
+    ${answers.installation}
+
+    # Usage 
+    ${answers.usage}  
+
+    # Credits
+    ${answers.credits} 
+
+    # License
+    [License](https:/opensource.org/licenses/${answers.license}
+
+    # Description
+    ${answers.description}
+
+    # Badges
+    ![License](https://img.shields.io/badge/License-${answers.license}-blue.svg "License Badge")
+
+    # Contribution
+    ${answers.contribution} 
+
+    # Test
+    ${answers.test}
+
+      `
 };
 
 module.exports = generateMarkdown;

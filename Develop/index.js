@@ -10,63 +10,60 @@ const userInput = inquirer
     .prompt([
         {
             type: "input",
-            message: " GitHub user name?",
-            name: "username",
-            // Required input
-            validate: (value) => { if (value) { return true } else { return "Please input something" } }
+            message: "What is the name of your project?",
+            name: "title"
         },
         {
             type: "input",
-            message: " Project Title?",
-            name: "projectTitle",
-            // Required input
-            validate: (value) => { if (value) { return true } else { return "Please input something" } }
-
+            message: "Describe your project.",
+            name: "description"
         },
         {
             type: "input",
-            message: " Detailed description",
-            name: "projectDescription",
-
+            message: "What are the  installation instructions for this project. Write NONE if no instructions?",
+            name: "installation"
         },
         {
             type: "input",
-            message: "What are the steps required to install your project? Write NONE if none are required.",
-            name: "installationProcess",
-
+            message: "How woud you like your application to be used?",
+            name: "usage"
         },
         {
             type: "input",
-            message: "Instructions for use.",
-            name: "instruction",
-
-        },
-
-        //List of licenses
-        {
-            type: "list",
-            message: " License name ",
-            name: "licenseName",
-            choices: ['The MIT License', 'The GPL License', 'Apache License', 'GNU License', 'N/A']
-
+            message: "Name/s of contributor/s in this project.",
+            name: "contribution"
         },
         {
             type: "input",
-            message: " E-mail(example@mailaccount.com) ",
-            name: "email",
-
+            message: "What are the test instructions?",
+            name: "test"
+        },
+        {
+            type: "checkbox",
+            message: "Please select a license.",
+            choices: [
+                "Appache",
+                "MIT",
+                "ISC",
+                "GNU GPLv3"
+            ],
+            name: "license"
         },
         {
             type: "input",
-            message: " Names of the contributor/s if any (If there are mulitple contributor, seperate names with comma and no space! )",
-            name: "contributorsGitUserName",
-
+            message: "Any other credits?",
+            name: "credit"
         },
         {
             type: "input",
-            message: "Provide examples on how to run tests.",
-            name: "tests"
-        }
+            message: "What is your GitHub username?",
+            name: "username"
+        },
+        {
+            type: "input",
+            message: "What is your E-mail address",
+            name: "email"
+        },
     ]).then(function (answers) {
         const markDownContent = generateMarkdown(answers)
         writeToFile("ReadMe.md", markDownContent);
