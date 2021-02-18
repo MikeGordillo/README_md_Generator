@@ -1,6 +1,6 @@
 // function to generate markdown for README
 function generateMarkdown(answers) {
-  return `
+        return `
   
   ## User_Name
           ${answers.username}
@@ -12,7 +12,7 @@ function generateMarkdown(answers) {
           ${answers.instruction}
           ${answers.instructionExample}
           ${answers.licenseName}
-          ${answers.licenseUrl}
+          ${answers.email}
           ${answers.contributorsGitUserName}
   ## Tests
           ${answers.tests}

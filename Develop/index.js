@@ -52,8 +52,8 @@ const userInput = inquirer
         },
         {
             type: "input",
-            message: " License url ",
-            name: "licenseUrl",
+            message: " Email(example@mailaccount.com) ",
+            name: "email",
 
         },
         {
