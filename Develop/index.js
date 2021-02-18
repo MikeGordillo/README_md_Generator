@@ -12,13 +12,15 @@ const userInput = inquirer
             type: "input",
             message: " GitHub user name?",
             name: "username",
-            validate: (value) => { if (value) { return true } else { return "please input something" } }
+            // Required input
+            validate: (value) => { if (value) { return true } else { return "Please input something" } }
         },
         {
             type: "input",
             message: " Project Title?",
             name: "projectTitle",
-            validate: (value) => { if (value) { return true } else { return "please input something" } }
+            // Required input
+            validate: (value) => { if (value) { return true } else { return "Please input something" } }
 
         },
         {
@@ -29,7 +31,7 @@ const userInput = inquirer
         },
         {
             type: "input",
-            message: "What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.",
+            message: "What are the steps required to install your project? Write NONE if none are required.",
             name: "installationProcess",
 
         },
@@ -39,11 +41,7 @@ const userInput = inquirer
             name: "instruction",
 
         },
-        {
-            type: "input",
-            message: "Provide instructions examples for use.",
-            name: "instructionExample",
-        },
+
         //List of licenses
         {
             type: "list",
@@ -60,7 +58,7 @@ const userInput = inquirer
         },
         {
             type: "input",
-            message: " names of the contributor/s if any (If there are mulitple contributor, seperate names with comma and no space! )",
+            message: " Names of the contributor/s if any (If there are mulitple contributor, seperate names with comma and no space! )",
             name: "contributorsGitUserName",
 
         },
