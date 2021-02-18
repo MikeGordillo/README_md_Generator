@@ -52,7 +52,7 @@ const userInput = inquirer
         },
         {
             type: "input",
-            message: " Email(example@mailaccount.com) ",
+            message: " E-mail(example@mailaccount.com) ",
             name: "email",
 
         },
