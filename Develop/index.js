@@ -1,7 +1,8 @@
 // declaring required consts
 const fs = require("fs");
 const inquirer = require("inquirer");
-const generateMarkdown = require("./utils/generateMarkdown.js")
+const path = require("path");
+const generateMarkdown = require("./utils/generateMarkdown.js");
 
 
 // array of questions for user
