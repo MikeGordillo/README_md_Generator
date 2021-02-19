@@ -29,6 +29,8 @@ function generateMarkdown(data) {
 * ${data.tests}
 ## Questions:
 * Contact ${data.name} with any questions at ${data.contact}
+
+![alt text](./Assets/nodeAPP.png)
       `
 };
 
