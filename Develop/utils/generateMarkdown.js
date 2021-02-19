@@ -10,7 +10,7 @@ function generateMarkdown(data) {
 ## GitHub user name: ${data.gitHub}
 
 ## Table of contents:  
-* [description](#description)
+* [Description](#description)
 * [Installation](#Installation)
 * [Usage](#usage)
 * [License](#license)
